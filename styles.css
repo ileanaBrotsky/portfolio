@@ -94,7 +94,7 @@ a:hover {
 /* Imagen utilizada en pantallas de anchura 480 px y superior */
 @media (min-width: 200px) {
     body {
-        background: url("/img/imgPortada200.jpg");
+        background: url("./img/imgPortada200.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;  
@@ -159,7 +159,7 @@ a:hover {
 /* Imagen utilizada en pantallas de anchura 768 px y superior */
 @media (min-width: 768px) {
     body {
-        background-image:url("/img/imgPortada390.jpg");
+        background-image:url("./img/imgPortada390.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;  
