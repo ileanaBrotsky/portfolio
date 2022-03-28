@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>IBWeb</title>
+        <meta name="description" content="Bienvenid@s a IBweb, mi perfil de trabajo en Desarrollo Web.">
+        <!-- progress web app -->
+        <meta name="theme-color" content="#575046">
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="shortcut icon" type="image/png" href="./img/IB_favicon_16.png">
+        <link rel="apple-touch-icon" href="./img/IB_favicon_16.png">
+        <link rel="apple-touch-startup-image" href="./img/IB_favicon_16.png">
+        <link rel="manifest" href="./manifest.json">
+        <!-- animaciones -->
+        <link     rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Satisfy&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+        <!-- css propio -->
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+
+    <body>
+    <div class="contenedor">
+        <header class="header">
+         <nav>
+            <button class="boton button_about animate__animated animate__fadeIn  animate__slower"><a href="">Sobre mi</a>   </button>
+            <button class="boton button_curriculum animate__animated animate__fadeIn animate__delay-1s animate__slower"> <a href="./docs/ileana Brotsky Currículum.pdf" target="blanck">Curriculum</a> </button>
+            <button  class="boton button_work animate__animated animate__fadeIn animate__delay-2s animate__slower"> <a href="./trabajos.html">Trabajos</a> </button>
+        </nav>
+    </header>
+      <div class="dibujoFondo"></div>
+      <div class= "logo">
+        <img class="logo_imagen animate__animated animate__fadeIn animate__delay-0.9s animate__slower" src="./img/2IB_logo_2022_192.png" alt="#IBweb_logo">
+      </div>
+      <div class= "presentacion">
+          <div class="presentacion_caja">
+        <h3 id="slogan">Hola! Soy Ileana Brotsky, Desarrolladora Web.</h3>
+        <p class="presentacion_p animate__animated animate__fadeIn animate__delay-2s animate__slower"> Me especializo en Frontend Design,<br/> 
+            y estos son algunos de mis trabajos.</p>
+            <a href="https://www.linkedin.com/in/ileana-brotsky-56b296215/" target="_blank" title="Linkedin"><img class="presentacion_icono" src="./icons/linkedin-brands.svg" width="30px" alt="#IBweb_logo"></a>
+            <a href="https://github.com/ileanaBrotsky" target="_blank" title="GitHub"> <img class="presentacion_icono" src="./icons/github-square-brands.svg" width="30px" alt="#IBweb_logo"></a>
+        </div>
+     </div>
+  
+    </div> 
+    <script src="./script.js"></script>
+    
+    <script type="text/javascript">
+    // movimiento del texto de la portada---------------------------------------
+    function typeEffect(element, speed) {
+	var text = element.innerHTML;
+	           element.innerHTML = "";
+	var i = 0;
+	var timer = setInterval(function() {
+    if (i < text.length) {
+      element.append(text.charAt(i));
+      i++;
+    } else {
+      clearInterval(timer);
+    }
+  }, speed);
+}
+// application
+var speed = 75;
+var slogan = document.getElementById('slogan');
+var delay = slogan.innerHTML.length * speed + speed;
+// type affect to header
+typeEffect(slogan, speed);
+
+</script>
+</body>
+</html>
