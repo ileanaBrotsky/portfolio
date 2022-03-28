@@ -300,10 +300,42 @@ a:hover {
     }
 } 
 
+/*------------------------------PAGINA CURRICULUM---------------------------------*/
 
+.contenedor_curriculum {
+  width: 100%;
+  /*agregado para efecto scroll*/
+   max-width: 1300px; 
+  margin: auto; 
+  display: grid;
+  grid-gap: 2%; 
+  grid-template-columns: 45% 1fr ;
+  grid-template-rows: 10vh 1fr 10%;
+  grid-template-areas:
+  "header_curriculum         header_curriculum "
+  "dibujo_curriculum    curriculum "
+  "dibujo_curriculum    descargar "
+   ;
+}
+.contenedor_curriculum .header_curriculum {
+ 
+  grid-area: header_curriculum;
+  /* background: var(--ocre);  */
+}
+.contenedor_curriculum .header_curriculum_nav{
+  display:flex;
+  float: right;
+  align-items: center;
+  justify-content: space-between;
 
+}
+.contenedor_curriculum .dibujo_curriculum {
+  grid-area: dibujo_curriculum;
+}
+.contenedor_curriculum .descargar{
+  grid-area:descargar;
 
-
+}
 
 
  
