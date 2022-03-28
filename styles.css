@@ -13,9 +13,7 @@
     color: var( --marronClaro); /*todos los textos*/
     margin: 0;
     padding: 0;
-    
-   
-  }
+   }
   .h1,h2,h3,h4,h5,h6 {
     font-family: 'Raleway', sans-serif !important;
   }
@@ -24,38 +22,8 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-   
-    /* overflow-x: hidden; */
-}
-  
-.contenedor {
-    width: 100%;
-    /*agregado para efecto scroll*/
-    /* max-width: 1000px; */
-    margin: auto; 
-    display: grid;
-    grid-gap: 2%; 
-    grid-template-columns: 45% 1fr;
-    grid-template-rows: 15vh 35vh 50vh;
-    grid-template-areas:
-    "header         header"
-    "dibujoFondo     logo "
-    "dibujoFondo     presentacion"
-    ;
   }
-.contenedor .header {
-    grid-area: header;
-     /* background:var( --marronOscuro); */
-    padding: 1%;
-  }
-.contenedor .dibujoFondo {
-    grid-area: dibujoFondo;
-    /* background: var(--crema);  */
-  }
-.contenedor .logo {
-    grid-area: logo;
-   /* background: var(--ocre);    */
-  }
+ 
   a{
     text-decoration: none;
 }
@@ -63,7 +31,7 @@ body{
     padding: 0.6rem;
     border: none;
     border-radius: 5%;
-    background: none;
+    background: none; 
     font-weight: 600;
     font-size: medium;
 }
@@ -74,106 +42,175 @@ body{
 a:hover {
     color: var(--ocre);
 }
+/*------------------index.html--------------------*/ 
+.contenedor .header {
+  grid-area: header;
+  font-size: 0.5rem;
+  padding:1%;
+  text-align: right;
+  
+} 
+.contenedor .dibujoFondo {
+  grid-area: dibujoFondo;
+  
+}
+.contenedor .logo {
+  grid-area: logo;
+ 
+}
 .contenedor .presentacion {
-    grid-area: presentacion;
-      /* background: var(--grisClaro);    */
-  }
- .presentacion_p {
-     margin: 2% 0;
-    
- }
- .presentacion_icono{
-    color:var( --ocre);
- }
- #slogan { word-wrap: break-word; }/*titulo con movimiento*/
+  grid-area: presentacion;
+}
+.presentacion_p {
+   margin: 2% 0;
+  
+}
+.presentacion_icono{
+  color:var( --ocre);
+}
+#slogan { word-wrap: break-word; }/*titulo con movimiento*/
 
+/*---------------------------------trabajos.html-------------------------------------------------------------------------*/
+
+.contenedor_trabajos .header_trabajos {
+  grid-area: header_trabajos;
+  
+}
+.contenedor_trabajos .header_trabajos_nav{
+  display:flex;
+  float: right;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.contenedor_trabajos .dibujo_trabajos {
+  grid-area: dibujo_trabajos;
+ 
+}
+
+
+.trabajos .tr1_descrip {
+  grid-area: tr1_descrip;
+  font-size: small;
+  text-align:center;
+  padding-top: 5%;
+}
+ .trabajos .tr1_img {
+  grid-area: tr1_img ;
+  margin:auto; 
+ 
+}
+  
+
+/*para los elementos que aparecen*/
+.animado{
+  opacity: 0;
+  transition: all 0.8s;
+}
+.mostrarArriba{
+  animation: mostrarArriba 3s;
+}
+@keyframes mostrarArriba{
+  0%{
+      transform:translatey(60px);
+  }  
+  
+100%{
+      transform:translatex(0px);
+   
+  }
+} 
 /*-----------------------------------------------------RESPONSIVE-------------------------------------------------------*/
 
   /*MEDIDAS DE BOOSTRAP Extra small: <576px	Small: ≥576px	Medium: ≥768px	Large: ≥992px	Extra large: ≥1200px*/
 
-/* Imagen utilizada en pantallas de anchura 480 px y superior */
-@media (min-width: 200px) {
+/* Imagen utilizada en pantallas de anchura 700 px y menor */
+@media (max-width: 900px) {
     body {
         background: url("./img/imgPortada200.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;  
-       
     }
+/*-----------------responsive-hasta 900px-----------Index-----------------------------------------*/
     .contenedor {
         width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        /*agregado para efecto scroll*/
-        /* max-width: 1000px; */
-        margin: auto; 
+        margin: auto;
         display: grid;
-        grid-template-columns: auto;
-        grid-template-rows: 1fr 18vh 27vh 30vh ;
+        grid-template-columns:100%;
+        grid-template-rows: 10vh 18vh 1fr  ;
         grid-template-areas:
         "header"
         "presentacion"
-        " logo "
-        "dibujoFondo"
+        " logo"  
         ;
-      }
-      .presentacion_caja {
-          width: 100%;
-          margin: auto;
-          padding:2rem;
-          text-align: center;
-          /* background: #c5a578; */
-         
-        }
-        .logo{
-            padding:0.5rem 6rem;
-        }
-        /* .button_about{
-            position: absolute;
-            top: 20%;
-            left: 50%;
-            transform: rotate(-26deg);
-        }
-        .button_curriculum{
-            position: absolute;
-            top:30% ;
-            left: 51%;
-          }
-        
-        .button_work{
-            position: absolute;
-            top:40% ;
-            left: 50%;
-            transform: rotate(26deg);
-        } */
-        .contenedor .header nav{
-          display:flex;
-          float: right;
-          align-items: center;
-          justify-content: space-between;
-          padding:5%;
-        
-        }
-}
-
-/* Imagen utilizada en pantallas de anchura 768 px y superior */
-@media (min-width: 768px) {
-    body {
-        background-image:url("./img/imgPortada390.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;  
     }
+   .presentacion_caja {
+        width: 100%;
+        font-size: 0.9rem;
+        margin: auto;
+        padding:1rem;
+        text-align: center;    
+    }
+   
+    .contenedor .header {
+      font-size: 0.3rem;
+      width: 100%;
+      text-align:center;
+      margin:auto;
+    
+    } 
+    .logo{
+      padding:0 6rem;
+     
+    }
+    .logo_imagen{
+      width: 60%;
+    }
+    .contenedor .header nav{
+      display:flex;
+      float: right;
+      align-items: center;
+      justify-content: space-between;
+      padding:5%;
+    }
+/*--------------------------------------responsive--hasta 900px-----------trabajos.html---------------------------*/
+    .contenedor_trabajos {
+      width: 100%;
+      margin: auto;
+      display: grid;
+      grid-gap: 2%; 
+      grid-template-columns:100%;
+      grid-template-rows: 15vh 40vh 1fr;
+      grid-template-areas:
+      "header_trabajos" 
+      "trabajos "
+      "dibujo_trabajos "
+      ;
+     
+      }
+        .contenedor_trabajos .trabajos{
+          display:grid;
+          grid-gap: 4%;
+          grid-template-columns:100%;
+          grid-template-rows: 1fr 1fr ;
+          grid-template-areas:
+         "tr1_descrip "
+         "tr1_img  "
+          ;  
+        
+         }
 }
-
-/* Imagen utilizada en pantallas de anchura 1200 px y superior */
-@media (min-width: 1200px) {
+/* Imagen utilizada en pantallas de anchura 901 px y superior */
+@media (min-width: 901px) {
     body {
         background-image:url("./img/imgPortada2.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;  
     }
+
+/*------------------responsive +900px-----index---------------------*/
     .contenedor {
         width: 100%;
         margin: auto; 
@@ -190,13 +227,14 @@ a:hover {
       .presentacion_caja {
         width: 100%;
         margin:0;
-        
-        /* background: #dfa92c; */
         text-align: left;
        }
+
+        
        .logo{
         padding:0;
     }
+   
     .button_about{
         position: absolute;
         top: 20%;
@@ -215,90 +253,33 @@ a:hover {
         left: 62%;
         transform: rotate(26deg);
     }
-}
-
-
-/*-------------------PAGINA TRABAJOS -------------------------------------------*/
-/*----------------------------------SECTOR TRABAJOS----------------------------------------------------*/
-/*división de la vista de los trabajos*/
-  
-.contenedor_trabajos {
-    width: 100%;
-    /*agregado para efecto scroll*/
-     max-width: 1300px; 
-    margin: auto; 
-    display: grid;
-    grid-gap: 2%; 
-    grid-template-columns: 45% 1fr;
-    grid-template-rows: 10vh 1fr;
-    grid-template-areas:
-    "header_trabajos         header_trabajos "
-    "dibujo_trabajos    trabajos "
-     ;
-  }
-  .contenedor_trabajos .header_trabajos {
-   
-    grid-area: header_trabajos;
-    /* background: var(--ocre);  */
-  }
-  .contenedor_trabajos .header_trabajos_nav{
-    display:flex;
-    float: right;
-    align-items: center;
-    justify-content: space-between;
-  
-  }
-  .contenedor_trabajos .dibujo_trabajos {
-    grid-area: dibujo_trabajos;
-    /* background: var(--crema);  */
-  }
-  .contenedor_trabajos .trabajos{
-    display:grid;
-    grid-gap: 4%;
-    grid-template-columns:1fr 75%;
-    grid-template-rows: 1fr ;
-    grid-template-areas:
-   "tr1_descrip    tr1_img  "
-  
-   ;  
-  
+  /*----------------------responsive +900px------------trabajos.html----------------------------------------------------*/
+    .contenedor_trabajos {
+      width: 100%;
+      /*agregado para efecto scroll*/
+       max-width: 1300px; 
+      margin: auto; 
+      display: grid;
+      grid-gap: 2%; 
+      grid-template-columns: 45% 1fr;
+      grid-template-rows: 20vh 1fr;
+      grid-template-areas:
+      "header_trabajos         header_trabajos "
+      "dibujo_trabajos    trabajos "
+       ;
     }
+    .contenedor_trabajos .trabajos{
+      display:grid;
+      grid-gap: 4%;
+      grid-template-columns:1fr 75%;
+      grid-template-rows: 1fr ;
+      grid-template-areas:
+     "tr1_descrip    tr1_img  "
+      ;  
+     }
 
-  .trabajos .tr1_descrip {
-    grid-area: tr1_descrip;
-    font-size: small;
-    text-align:center;
-    padding-top: 5%;
-    
-  }
-   
-  
-  .trabajos .tr1_img {
-    grid-area: tr1_img ;
-     
-     margin:auto; 
-    /* background: violet;   */
-  }
-    
-  
-/*para los elementos que aparecen*/
- .animado{
-    opacity: 0;
-    transition: all 0.8s;
 }
-.mostrarArriba{
-    animation: mostrarArriba 3s;
-}
-@keyframes mostrarArriba{
-    0%{
-        transform:translatey(60px);
-    }  
-    
- 100%{
-        transform:translatex(0px);
-     
-    }
-} 
+
 
 /*------------------------------PAGINA CURRICULUM---------------------------------*/
 
