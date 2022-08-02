@@ -70,6 +70,26 @@ a:hover {
 }
 #slogan { word-wrap: break-word; }/*titulo con movimiento*/
 
+/*---------------------------------sobreMi.html-------------------------------------------------------------------------*/
+
+.contenedor_sobreMi .header_sobreMi {
+  grid-area: header_sobreMi;
+  
+}
+.contenedor_sobreMi .header_sobreMi_nav{
+  display:flex;
+  float: right;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.contenedor_sobreMi .dibujo_sobreMi {
+  grid-area: dibujo_sobreMi;
+ 
+}
+
+ 
+
 /*---------------------------------trabajos.html-------------------------------------------------------------------------*/
 
 .contenedor_trabajos .header_trabajos {
@@ -87,8 +107,6 @@ a:hover {
   grid-area: dibujo_trabajos;
  
 }
-
-
 .trabajos .tr1_descrip {
   grid-area: tr1_descrip;
   font-size: small;
@@ -98,10 +116,8 @@ a:hover {
  .trabajos .tr1_img {
   grid-area: tr1_img ;
   margin:auto; 
- 
 }
-  
-
+ 
 /*para los elementos que aparecen*/
 .animado{
   opacity: 0;
@@ -117,9 +133,9 @@ a:hover {
   
 100%{
       transform:translatex(0px);
-   
-  }
+    }
 } 
+/*---------------------------------------------------------------------------------------------------------------------*/
 /*-----------------------------------------------------RESPONSIVE-------------------------------------------------------*/
 
   /*MEDIDAS DE BOOSTRAP Extra small: <576px	Small: ≥576px	Medium: ≥768px	Large: ≥992px	Extra large: ≥1200px*/
@@ -253,8 +269,8 @@ a:hover {
         left: 62%;
         transform: rotate(26deg);
     }
-  /*----------------------responsive +900px------------trabajos.html----------------------------------------------------*/
-    .contenedor_trabajos {
+  /*----------------------responsive +900px------------sobreMi.html----------------------------------------------------*/
+    .contenedor_sobreMi {
       width: 100%;
       /*agregado para efecto scroll*/
        max-width: 1300px; 
@@ -264,22 +280,94 @@ a:hover {
       grid-template-columns: 45% 1fr;
       grid-template-rows: 20vh 1fr;
       grid-template-areas:
-      "header_trabajos         header_trabajos "
-      "dibujo_trabajos    trabajos "
+      "header_sobreMi         header_sobreMi "
+      "dibujo_sobreMi    sobreMi "
        ;
     }
-    .contenedor_trabajos .trabajos{
+    .contenedor_sobreMi .sobreMi{
       display:grid;
       grid-gap: 4%;
-      grid-template-columns:1fr 75%;
-      grid-template-rows: 1fr ;
+      grid-template-columns:170px 170px 1fr 1fr ;
+      grid-template-rows: 15vh 15vh 15vh 15vh ;
       grid-template-areas:
-     "tr1_descrip    tr1_img  "
-      ;  
-     }
+     "uno  uno dos dos  "
+     "uno  uno tres tres "
+     "cuatro cinco seis   siete " 
+     "cuatro cinco seis   siete"; 
+     border-radius:1%;
+   }
+  
+   
+   .sobreMi .uno {
+     justify-content: center;
+     grid-area: uno;
+     background: #c49d31;
+     border-radius: 2%;
+   }
+   .sobreMi .tres {
+     justify-content: center;
+     grid-area:tres;
+     background: #6e1a6a;
+     border-radius: 2%;
+   }
+   .sobreMi .dos {
+     justify-content: center;
+     grid-area: dos;
+     border-radius: 2%;
+     background: #851113;
+   }
+   .sobreMi .seis {
+     justify-content: center;
+     grid-area: seis;
+     border-radius: 2%;
+     background: #87bb27;
+   }
+   .sobreMi .siete {
+     justify-content: center;
+     grid-area: siete;
+     border-radius: 2%;
+     background: #0e92cf;
+   }
+   .sobreMi .cuatro {
+     justify-content: center;
+     grid-area: cuatro;
+     border-radius: 2%;
+     background: #189623;
+   }
+   .sobreMi .cinco {
+     justify-content: center;
+     grid-area: cinco;
+    border-radius: 2%;
+    background: #31c47b;
+   }
+   
+
 
 }
-
+/*----------------------responsive +900px------------trabajos.html----------------------------------------------------*/
+.contenedor_trabajos {
+  width: 100%;
+  /*agregado para efecto scroll*/
+   max-width: 1300px; 
+  margin: auto; 
+  display: grid;
+  grid-gap: 2%; 
+  grid-template-columns: 45% 1fr;
+  grid-template-rows: 20vh 1fr;
+  grid-template-areas:
+  "header_trabajos         header_trabajos "
+  "dibujo_trabajos    trabajos "
+   ;
+}
+.contenedor_trabajos .trabajos{
+  display:grid;
+  grid-gap: 4%;
+  grid-template-columns:1fr 75%;
+  grid-template-rows: 1fr ;
+  grid-template-areas:
+ "tr1_descrip    tr1_img  "
+  ;  
+ }
 
 /*------------------------------PAGINA CURRICULUM---------------------------------*/
 
